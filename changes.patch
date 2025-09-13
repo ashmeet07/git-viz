@@ -1,0 +1,103 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 9a28acf..5625594 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -286,4 +286,96 @@[m [magar apko bhotsare commit ek single commit me merge karna hoe fir[m
+ agar apke do HEADS pe kam chalra hai apna or ek unka to fir merge karne ke time pe koi conflict na ae to pehale apna merge kardo fir unka kardo [m
+ [m
+ # `command` git merge -s ours branch //ours means origin [m
+[31m-# `command` git merge -s theirs branch //theirs means their origin[m
+\ No newline at end of file[m
+[32m+[m[32m# `command` git merge -s theirs branch //theirs means their origin[m
+[32m+[m
+[32m+[m
+[32m+[m[32magar apko repo ki history talash ni hay to app log lagao ge[m
+[32m+[m[32m`command` git log[m
+[32m+[m
+[32m+[m[32magar apko dekhna hai one per commit[m[41m [m
+[32m+[m[32m`command` git log --oneline[m
+[32m+[m
+[32m+[m[32magar apko graph ke view me dekhni hai to aplagaenge[m[41m [m
+[32m+[m[32m`command` git log --oneline --graph --all[m
+[32m+[m
+[32m+[m[32magar apko log kisi saji hui gadi jese dhekhnai hai jo apne jiwan me pehli baar li hai to[m[41m [m
+[32m+[m[32m`command` git log --pretty=format:"%h -%an,%ar:%s"[m
+[32m+[m
+[32m+[m[32mh - short hash[m[41m [m
+[32m+[m[32man - author name[m
+[32m+[m[32mar- relative date[m
+[32m+[m[32ms - subject[m[41m [m
+[32m+[m
+[32m+[m[32magar apko filter karna hai to kare[m
+[32m+[m[32m`command` git log -9 //jisse apkepass 9 hi log aenge[m
+[32m+[m
+[32m+[m[32magar apko dekhna hai ki kisi specific author ke liye[m[41m [m
+[32m+[m[32m`command` git log --author="ashmeet07"[m
+[32m+[m
+[32m+[m[32magar apko kisi specific word ke liye dekhne hai to[m[41m [m
+[32m+[m[32m`command` git log --grep="nav"[m
+[32m+[m
+[32m+[m[32magar apko kisi specific file ke liye dekhne hoe to[m[41m [m
+[32m+[m[32m`command` git log --filename.txt[m
+[32m+[m
+[32m+[m[32magar apko dekhna hai ki commit witin a date range[m[41m [m
+[32m+[m[32m`command` git log --since="2020-02-10" --until"yyyy-mm-dd"[m
+[32m+[m
+[32m+[m[32magar apko kisi date ke baad dekhna hai fir[m[41m [m
+[32m+[m[32m`command` git log --after="2 weeks ago"[m
+[32m+[m
+[32m+[m
+[32m+[m[32mye apko files ke name degi jo modified hogai[m[41m [m
+[32m+[m[32m`command` git log --name-only[m[41m [m
+[32m+[m
+[32m+[m[32mye apko names ke sath sath status bhi degi[m
+[32m+[m[32m`command` git log --name-status[m
+[32m+[m
+[32m+[m
+[32m+[m[32mye apko commits ki range degi[m[41m [m
+[32m+[m
+[32m+[m[32m`command` git log commit1..commit2[m
+[32m+[m
+[32m+[m[32mye apko branch ke bich ke commit ki rnage degi compare karke[m[41m [m
+[32m+[m[32m`command` git log branch1..branch2[m
+[32m+[m
+[32m+[m
+[32m+[m[32m**Diff Command**[m[41m [m
+[32m+[m[32mAgar apko dekhna hai ki changes jo apne kiye unke sath jo existed hai to ap diff use kartey hai jisse apko comparision ka pata chalta hai latest repo ke sath[m[41m [m
+[32m+[m[32m`command` git diff --cached[m
+[32m+[m
+[32m+[m[32mcompare with different commit agar apko kisi or commit ke sath changes compare karne hai to use kare[m
+[32m+[m[32m`command` git diff <comit-hash>[m
+[32m+[m
+[32m+[m[32magar apko kisi do commit ka change dekhna hai to[m[41m [m
+[32m+[m[32m`command` git commit1 commit2[m
+[32m+[m
+[32m+[m[32magar apko compare karni hai koi do branch[m[41m [m
+[32m+[m[32m`command` git branch1 branch2[m
+[32m+[m
+[32m+[m[32magar apko koi file name dekhni hai ki change hui hai to[m[41m [m
+[32m+[m[32m`command` git diff --name-only[m
+[32m+[m
+[32m+[m[32magar apko kisi remote branch ke sath comparision karna ho[m[41m [m
+[32m+[m[32m`command` git diff origin/main[m
+[32m+[m
+[32m+[m
+[32m+[m[32magar apko stagged changes ke sath compare karna hai to[m[41m [m
+[32m+[m[32m`command` git diff --staged[m
+[32m+[m
+[32m+[m[32magar tumko local commit or remote branch mai fark dekhna hai to[m[41m [m
+[32m+[m[32m`command` git diff HEAD origin/main[m
+[32m+[m
+[32m+[m[32magar spacing badli ho to ignore changes okay[m[41m [m
+[32m+[m[32m`command` git diff -w[m
+[32m+[m
+[32m+[m[32mcheck for specific file across commits[m[41m [m
+[32m+[m[32m`command` git diff c1 c2 filename.txt[m
+[32m+[m
+[32m+[m[32magar apko kisi directory ka pata karna ho ki name badla ya nahi[m[41m [m
+[32m+[m[32m`command` git diff --dirstat[m
+[32m+[m
+[32m+[m
+[32m+[m[32magar kisi diff ko file me save karna ho to[m[41m [m
+[32m+[m[32m`command` git diff > changes.patch[m
+[41m+[m
