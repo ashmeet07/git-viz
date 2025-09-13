@@ -163,3 +163,127 @@ jo commit hai wo changes locally store kardeta hey jisko ham staged boltey hai
 agar kisi staged ko wapis se hatana hai to ye chalao
 `command`
 # `git reset HEAD "filename"`
+
+agar tumko remote repo ke changes bulane hey to 
+# `command` git pull 
+
+- from specific branch 
+# `command` git pull origin main
+
+- ise milti julti command 
+# `command` git fetch  
+# `or git merge`
+
+agar rebase karke pull karni hey to 
+# `command` git pull --rebase origin main
+
+# `command` git fetch origin main
+# `command` git rebase origin/main
+
+agar sab remote se pull karni hai to 
+# `command` git pull --all
+
+
+jo git fetch origin hey wo sirif fetch karegi baki rebase karna padega origin/main karke or merge 
+
+agar kuch galat hota hey to fir chalado 
+# `command` git merge --abort  
+# `command` git rebase --abort
+
+
+- agar force pull karna pade to fir 
+# `command` git fetch --all 
+# `command` git reset --hard origin/main
+
+
+**Push Commands**
+
+- Push wali commands 
+
+agar kisi or ne changes nahi kare ho to chalao other wise wont work fir force hi chalegi
+# `command` git push --force-with-lease origin branch-name //safer or alternative for  `git push --force origin main`
+
+mirror command
+ye command hubahu duplicate local ka remote pe phek degi
+
+# `command` git push --mirror origin 
+
+
+dry run the push dekhna ki push karke hoega kya 
+# `command` git push --dry-run origin main
+
+
+push all local branches 
+# `command` git push --all origin //sare origin pe 
+
+**Stash** ye locally data store karta hey means in stack store the local data when some one apply the stash from the top of stack the stack will be applied and newly added stash will goes on top of stack each time when user stash local changes also usefull at the time of merge conflict to resolve 
+
+
+agar merge conflict ki error ajae to first stash then pull when merge conflict solve then merge the stash what you have applied on locally 
+
+# `command` git stash
+
+agar apko custom tag lagana ho to fir 
+
+# `command` git stash save "message"
+
+agar apko untracked files ko stash me lana ho to lagae
+# `command` git stash -u 
+
+or agar koi file history se ignored hai to apko lagana hoga
+# `command` git stash -a
+
+agar apko end me or pehle apki stash stack ki list dekhni hogi to simple 
+# `command` git stash list
+
+or agar final apko apne local changes apply karne hai to kare 
+# `command` git stash apply 
+
+for specific stash 
+# `command` git stash apply stash@{indexofthestash}
+
+agar apko koi apna stash remove+apply karna hai to pop kare stack se 
+# `command` git stash pop
+
+specific 
+# `command` git stash pop stash@{indexofstash}
+
+properly delte hi karna hai bina lagai to 
+# `command` git stash drop
+
+specific 
+# `command` git stash drop stash@{indexofstash}
+
+puri stack clear karni hai to 
+# `command` git stash clear
+
+agar apko apna stash kisi new branch me lagana hai to 
+# `command` git stash branch branch-name stash@{indexofstash}
+
+agar apko kisi stash ka content dekhna hai to lagae
+# `command` git stash show 
+
+agar apko full difference ke sath dekhna hai with latest to 
+# `command` git stash show -p
+
+
+**merge karneki command**
+
+# `command` git merge
+
+# `command` git merge --no-ff branch //this will show history while merging 
+
+# `command` git merge --abort
+
+
+agar apko kisi ka specific commit merge karna hoe fir 
+# `command` git merge <commit-hash>
+
+agar apko bhotsare commit ek single commit me merge karna hoe fir 
+# `command` git merge --squash branchname
+# `command` git commit -m  "Merged branchname brash as one commit"
+
+agar apke do HEADS pe kam chalra hai apna or ek unka to fir merge karne ke time pe koi conflict na ae to pehale apna merge kardo fir unka kardo 
+
+# `command` git merge -s ours branch //ours means origin 
+# `command` git merge -s theirs branch //theirs means their origin
