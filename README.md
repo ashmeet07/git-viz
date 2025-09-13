@@ -287,19 +287,17 @@ agar apke do HEADS pe kam chalra hai apna or ek unka to fir merge karne ke time 
 
 # `command` git merge -s ours branch //ours means origin 
 # `command` git merge -s theirs branch //theirs means their origin
-
-
 agar apko repo ki history talash ni hay to app log lagao ge
-`command` git log
+# `git log`
 
 agar apko dekhna hai one per commit 
-`command` git log --oneline
+# `git log --oneline`
 
 agar apko graph ke view me dekhni hai to aplagaenge 
-`command` git log --oneline --graph --all
+# `git log --oneline --graph --all`
 
 agar apko log kisi saji hui gadi jese dhekhnai hai jo apne jiwan me pehli baar li hai to 
-`command` git log --pretty=format:"%h -%an,%ar:%s"
+# `git log --pretty=format:"%h -%an,%ar:%s"`
 
 h - short hash 
 an - author name
@@ -307,75 +305,71 @@ ar- relative date
 s - subject 
 
 agar apko filter karna hai to kare
-`command` git log -9 //jisse apkepass 9 hi log aenge
+# `git log -9` //jisse apkepass 9 hi log aenge
 
 agar apko dekhna hai ki kisi specific author ke liye 
-`command` git log --author="ashmeet07"
+# `git log --author="ashmeet07"`
 
 agar apko kisi specific word ke liye dekhne hai to 
-`command` git log --grep="nav"
+# `git log --grep="nav"`
 
 agar apko kisi specific file ke liye dekhne hoe to 
-`command` git log --filename.txt
+# `git log --filename.txt`
 
 agar apko dekhna hai ki commit witin a date range 
-`command` git log --since="2020-02-10" --until"yyyy-mm-dd"
+# `git log --since="2020-02-10" --until"yyyy-mm-dd"`
 
 agar apko kisi date ke baad dekhna hai fir 
-`command` git log --after="2 weeks ago"
+# `git log --after="2 weeks ago"`
 
 
 ye apko files ke name degi jo modified hogai 
-`command` git log --name-only 
+# `git log --name-only` 
 
 ye apko names ke sath sath status bhi degi
-`command` git log --name-status
+# `git log --name-status`
 
 
 ye apko commits ki range degi 
 
-`command` git log commit1..commit2
+# `git log commit1..commit2`
 
 ye apko branch ke bich ke commit ki rnage degi compare karke 
-`command` git log branch1..branch2
+# `git log branch1..branch2`
 
 
-**Diff Command** 
-Agar apko dekhna hai ki changes jo apne kiye unke sath jo existed hai to ap diff use kartey hai jisse apko comparision ka pata chalta hai latest repo ke sath 
-`command` git diff --cached
+**Diff Command** Agar apko dekhna hai ki changes jo apne kiye unke sath jo existed hai to ap diff use kartey hai jisse apko comparision ka pata chalta hai latest repo ke sath 
+# `git diff --cached`
 
 compare with different commit agar apko kisi or commit ke sath changes compare karne hai to use kare
-`command` git diff <comit-hash>
+# `git diff <comit-hash>`
 
 agar apko kisi do commit ka change dekhna hai to 
-`command` git commit1 commit2
+# `git commit1 commit2`
 
 agar apko compare karni hai koi do branch 
-`command` git branch1 branch2
+# `git branch1 branch2`
 
 agar apko koi file name dekhni hai ki change hui hai to 
-`command` git diff --name-only
+# `git diff --name-only`
 
 agar apko kisi remote branch ke sath comparision karna ho 
-`command` git diff origin/main
-
+# `git diff origin/main`
 
 agar apko stagged changes ke sath compare karna hai to 
-`command` git diff --staged
+# `git diff --staged`
 
 agar tumko local commit or remote branch mai fark dekhna hai to 
-`command` git diff HEAD origin/main
+# `git diff HEAD origin/main`
 
 agar spacing badli ho to ignore changes okay 
-`command` git diff -w
+# `git diff -w`
 
 check for specific file across commits 
-`command` git diff c1 c2 filename.txt
+# `git diff c1 c2 filename.txt`
 
 agar apko kisi directory ka pata karna ho ki name badla ya nahi 
-`command` git diff --dirstat
-
+# `git diff --dirstat`
 
 agar kisi diff ko file me save karna ho to 
-`command` git diff > changes.patch
-
+# `git diff > changes.patch`
