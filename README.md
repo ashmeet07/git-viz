@@ -431,3 +431,53 @@ git diff --dirstat
 save diff to file:
 ```bash
 git diff > changes.patch
+```
+
+agar tumko commiit ko undo karna hai to fir stagging area me hi changes rakhne hai to 
+`command` git reset --soft  HEAD~1
+
+or agar unstaged rakhna hai puri tarike se undo  means keep changes unstaged
+`command` git reset --mixed HEAD~1
+
+ab agar tumko undo karna hai or changes discard karne hai
+`command` git reset --hard HEAD~1
+
+or agar tumko new commit se purane commit hange karne hai to 
+`command` git revert <commit>
+
+
+agar tumko kisi branch se single commit lena ho to 
+`command` git cherry-pick <commit-hash>
+
+agar tumko unstaged files ko remove kartey hue dekhna hai ki kya remove hora hai
+`command` git clean -n 
+
+actually remove ko dekhna hai to 
+`command` git clean -f 
+
+agar directories dekhni hai to 
+`command` git clean -fd
+
+
+agar tumko koi tepo zip ya tar format me publish karna hai to 
+`command` git  archive  --format=zip HEAD > latest.zip
+
+see how changed lines in a file all people 
+`command` git blame file.txt
+
+agar tumko kisi commit ki details dekhni hai to 
+`command` git show <commit-hash>
+
+**UserSetting** 
+useremail password set karna ho to 
+git config --global user.name "username"
+git config --global user.email "useremail@domain.com"
+
+
+configuration ko checkkarna ho to 
+git config  --list
+
+
+agar current repo ke liye crlf on karna ho to 
+git config --global core.autocrlf false/true
+
